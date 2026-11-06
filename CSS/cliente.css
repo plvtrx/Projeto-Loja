@@ -1,0 +1,54 @@
+.btn-sair,.btn-voltar {
+    width: 3rem;
+    height: 2rem;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    border-radius: 2rem;
+    background-color: #af1313;
+    transition: all 0.5s ease-in-out;
+}.btn-sair:hover {
+    background-color: #8f0f0f;
+}
+
+.btn-voltar{
+    width: 3.5rem;
+    background-color: #4a14c7;
+}.btn-voltar:hover {
+    background-color: #350f8f;
+}
+
+.perfil{
+    color:#fff;
+    width: 100%;
+    height: 3rem;
+    background-color: #1F2B13;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    text-transform: uppercase;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #050505;
+}
+
+.acao {
+    width: 100%;
+    height: 15%;
+    background-color: #460000;
+
+    gap: 2rem;
+}

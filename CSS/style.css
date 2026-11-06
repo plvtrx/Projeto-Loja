@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Caacupe+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #1F2B13;
+}
+
+ul {
+    gap: 2rem;
+    display: flex;
+    padding: 0 1rem;
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.6s ease;
+}
+
+.nav-links {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.nav-links a:hover {
+    color: #AB9893;
+}
+
+.logoMarca {
+    width: 7rem;
+    height: 100%;
+    margin-left: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoMarca>img {
+    width: 40px;
+    height: 40px;
+}
+
+li.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.icon-search {
+    height: 2rem;
+    width: 2.5rem;
+    border: 0.01rem solid #fff;
+    border-radius: 0.5rem 0 0 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input {
+    cursor: text;
+    border: none;
+    color: #fff;
+    background: none;
+
+    width: 300px;
+    height: 2rem;
+    padding-left: 0.5rem;
+    border: 0.01rem solid #fff;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+svg {
+    width: 1rem;
+    height: 1rem;
+    fill: #fff;
+    transition: all 0.6s ease;
+}
+
+a>svg:hover {
+    fill: #AB9893;
+}
+
+ul.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1F2B13;
+}

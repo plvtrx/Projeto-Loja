@@ -1,0 +1,121 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, #1F2B13, #2b4b0b, #1F2B13);
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1 {
+    z-index: 1;
+}
+
+.sair {
+    z-index: 1;
+    width: 6rem;
+    height: 2.5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 10px 20px;
+    border-radius: 1rem;
+    background-color: #8f0f0f;
+    transition: all 1s;
+}
+
+.sair:hover {
+    background-color: #2B1913;
+}
+
+table {
+    color: #fff;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.table-color {
+    background-color: black;
+    width: 100%;
+    height: 2rem;
+}
+
+tr {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1rem);
+}
+
+td {
+    padding: 5px;
+}
+
+.acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.update,
+.delete {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: #350f8f;
+    transition: all 0.5s ease-in-out;
+}
+
+.delete {
+    background-color: #8f0f0f;
+}
+
+.update:hover {
+    background-color: #4a14c7;
+}.delete:hover {
+    background-color: #af1313;
+}
+
+.search {
+    width: 100%;
+    height: 5rem;
+}
+
+.boxSearch {
+    width: 25rem;
+    height: 2rem;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: solid 1px #000;
+    background-color: #fff;
+
+    margin: 1rem auto;
+}
+
+.search>button {
+    border: none;
+    outline: none;
+    background: none;
+
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: #350f8f;
+    transition: all 0.5s ease-in-out;
+}
+
+.search>button:hover {
+    background-color: #4a14c7;
+}

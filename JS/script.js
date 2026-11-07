@@ -15,12 +15,25 @@ function toggleForms() {
     }
 }
 
+
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+});
+
+
+
 // ----------------------Remove Senha incorreta-----------------------------
 const errorMessage = document.getElementById('error-message');
 
 const submit = document.getElementById('submit');
 
-if(!submit && errorMessage) {
+if (!submit && errorMessage) {
     errorMessage.style.display = 'none'; // Faz a mensagem desaparecer gradualmente
 } else {
     // Define um temporizador para remover a mensagem após 5 segundos

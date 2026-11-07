@@ -5,7 +5,8 @@ main {
 
 .section-produto {
     width: 100%;
-    height: 100vh;
+    height: auto; /* Altera para auto para se ajustar ao conteúdo */
+    padding: 2rem 0; /* Adiciona espaçamento em cima e embaixo */
 }
 
 .qtdProduto {
@@ -17,11 +18,10 @@ main {
 .card-produtos {
     color: #000;
     width: 100%;
-    height: 100%;
     margin: 0 auto;
-
-    gap: 1.5rem;
     display: flex;
+    flex-wrap: wrap; /* Permite que os cartões se movam para a próxima linha */
+    gap: 1.5rem;
     align-items: center;
     justify-content: center;
 }
@@ -29,14 +29,13 @@ main {
 .card {
     width: 20%;
     height: 30rem;
-
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-.card>img {
+.card > img {
     width: 100%;
     height: 90%;
     border-radius: 1rem;
@@ -50,4 +49,27 @@ main {
 
 .card:hover img {
     transform: scale(1.05);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .section-produto {
+        padding: 1rem; /* Reduz o padding em telas menores */
+    }
+
+    .card {
+        width: 45%; /* Aumenta a largura do cartão em telas menores */
+        height: auto; /* Ajusta a altura do cartão para auto */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%; /* Cartões ocupam quase toda a largura em telas muito pequenas */
+    }
+
+    .qtdProduto {
+        top: 10%; /* Ajusta a posição da quantidade do produto */
+        left: 5%; /* Ajusta a posição para ficar mais centralizado */
+    }
 }

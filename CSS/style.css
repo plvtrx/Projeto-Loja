@@ -13,14 +13,15 @@ header {
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between; /* Alterado para space-between */
     background-color: #1F2B13;
+    padding: 0 1rem; /* Adicionado padding */
 }
 
 ul {
     gap: 2rem;
     display: flex;
-    padding: 0 1rem;
+    padding: 0;
     list-style: none;
 }
 
@@ -42,14 +43,12 @@ a {
 .logoMarca {
     width: 7rem;
     height: 100%;
-    margin-left: 10%;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logoMarca>img {
+.logoMarca > img {
     width: 40px;
     height: 40px;
 }
@@ -94,7 +93,7 @@ svg {
     transition: all 0.6s ease;
 }
 
-a>svg:hover {
+a > svg:hover {
     fill: #AB9893;
 }
 
@@ -113,4 +112,36 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: #1F2B13;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        height: auto; /* Ajusta a altura */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Alinha os links verticalmente */
+        gap: 1rem; /* Espaçamento entre os links */
+    }
+
+    .search-input {
+        width: 100%; /* Aumenta a largura do campo de busca */
+        margin-top: 0.5rem; /* Espaçamento superior */
+    }
+}
+
+@media (max-width: 480px) {
+    .logoMarca {
+        width: 5rem; /* Reduz a largura do logo em telas menores */
+    }
+
+    .nav-links {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte dos links */
+    }
+
+    .search-input {
+        width: 80%; /* Ajusta a largura do campo de busca */
+    }
 }

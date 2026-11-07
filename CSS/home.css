@@ -3,7 +3,7 @@ main {
     min-height: 100vh;
 }
 
-main>.bemVindo {
+main > .bemVindo {
     width: 100%;
     height: 760px;
 
@@ -13,7 +13,7 @@ main>.bemVindo {
     background-image: url('../img/bemVindo.jpg');
 }
 
-.bemVindo>a>button {
+.bemVindo > a > button {
     width: 200px;
     height: 50px;
     border: none;
@@ -30,7 +30,7 @@ main>.bemVindo {
     transform: translate(-50%, -50%);
 }
 
-.bemVindo>a>button:hover {
+.bemVindo > a > button:hover {
     cursor: pointer;
     background-color: #AB9893;
 }
@@ -45,7 +45,7 @@ main>.bemVindo {
     justify-content: center;
 }
 
-.informacoes>div {
+.informacoes > div {
     font-size: 0.875rem;
 
     gap: 0.5rem;
@@ -73,7 +73,7 @@ main>.bemVindo {
     border-radius: 1rem;
 }
 
-.card>img {
+.card > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -103,7 +103,6 @@ main>.bemVindo {
     align-items: center;
     justify-content: center;
     background-color: #1F2B13;
-
 }
 
 .txt-novidade {
@@ -139,4 +138,55 @@ main>.bemVindo {
 .btn-novidade:hover {
     cursor: pointer;
     background-color: #AB9893;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .bemVindo {
+        height: 500px; /* Reduz a altura da seção de boas-vindas em telas menores */
+    }
+
+    .bemVindo > a > button {
+        width: 150px; /* Reduz a largura do botão */
+        height: 40px; /* Reduz a altura do botão */
+        font-size: 1rem; /* Ajusta o tamanho da fonte do botão */
+    }
+
+    .informacoes {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        height: auto; /* Ajusta a altura */
+        gap: 2rem; /* Reduz o espaço entre os elementos */
+    }
+
+    .card {
+        width: 90%; /* Aumenta a largura do cartão em telas menores */
+        height: auto; /* Ajusta a altura do cartão para auto */
+    }
+
+    .card-categoria,
+    .card-novidades {
+        flex-direction: column; /* Alinha os cartões verticalmente */
+        height: auto; /* Ajusta a altura para auto */
+    }
+
+    .btn-novidade {
+        width: 150px; /* Reduz a largura do botão de novidades */
+        height: 40px; /* Reduz a altura do botão de novidades */
+        font-size: 1rem; /* Ajusta o tamanho da fonte do botão */
+    }
+}
+
+@media (max-width: 480px) {
+    .bemVindo {
+        height: 400px; /* Reduz ainda mais a altura para telas muito pequenas */
+    }
+
+    .txt-novidade {
+        font-size: 1rem; /* Ajusta o tamanho da fonte do texto de novidades */
+    }
+
+    .btn-novidade {
+        width: 120px; /* Reduz a largura do botão de novidades */
+        height: 35px; /* Reduz a altura do botão de novidades */
+    }
 }

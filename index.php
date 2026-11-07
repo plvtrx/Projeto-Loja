@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +15,13 @@ session_start();
 
 <body>
     <header>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <nav>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="/index.php">Home</a></li>
                 <li><a href="/php/produtos.php">Produtos</a></li>
                 <li><a href="#contato">Contato</a></li>
@@ -57,14 +61,7 @@ session_start();
                     </a>
                 </li>
                 <li>
-                    <a href=<?php
-                            if (isset($_SESSION['email'])) {
-                                echo './php/cliente.php';
-                            } else {
-                                echo './php/login.php';
-                            }
-                            
-                            ?>>
+                    <a href="<?php echo isset($_SESSION['email']) ? './php/cliente.php' : './php/login.php'; ?>">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-person-fill" viewBox="0 0 16 16">
                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
@@ -75,6 +72,7 @@ session_start();
         </nav>
     </header>
 
+
     <main>
         <div class="bemVindo">
             <a href="/php/produtos.php"><button>Compre Já!</button></a>
@@ -82,15 +80,15 @@ session_start();
 
         <div class="informacoes">
             <div class="info">
-                <img src="./SVG/coin.svg" alt="coin">
+                <img src="./SVG/coin.svg" alt="Desconto de 15%">
                 <p>15% OFF NA PRIMEIRA COMPRA</p>
             </div>
             <div class="info">
-                <img src="./SVG/truck.svg" alt="truck">
+                <img src="./SVG/truck.svg" alt="Frete grátis">
                 <p>FRETE GRÁTIS* ACIMA DE R$ 200,00</p>
             </div>
             <div class="info">
-                <img src="./SVG/arrow-repeat.svg" alt="arrow-repeat">
+                <img src="./SVG/arrow-repeat.svg" alt="Devolução grátis">
                 <p>DEVOLUÇÃO GRÁTIS ATÉ 15 DIAS</p>
             </div>
         </div>
@@ -99,16 +97,12 @@ session_start();
             <div class="card">
                 <img src="./IMG/roupa1.jpg" alt="Produto 1">
             </div>
-
             <div class="card">
                 <img src="./IMG/roupa2.jpg" alt="Produto 2">
             </div>
-
             <div class="card">
                 <img src="./IMG/roupa3.jpg" alt="Produto 3">
-
             </div>
-
             <div class="card">
                 <img src="./IMG/roupa4.jpg" alt="Produto 4">
             </div>
@@ -127,23 +121,19 @@ session_start();
             <div class="card">
                 <img src="./IMG/roupa1.jpg" alt="Produto 1">
             </div>
-
             <div class="card">
                 <img src="./IMG/roupa2.jpg" alt="Produto 2">
             </div>
-
             <div class="card">
                 <img src="./IMG/roupa3.jpg" alt="Produto 3">
-
             </div>
-
             <div class="card">
                 <img src="./IMG/roupa4.jpg" alt="Produto 4">
             </div>
         </div>
 
         <div class="verMais">
-            <button class="btn-novidade"><a href="/php/produtos.php">Ver Mais</a></button>
+            <a href="/php/produtos.php"><button class="btn-novidade">Ver Mais</button></a>
         </div>
 
     </main>

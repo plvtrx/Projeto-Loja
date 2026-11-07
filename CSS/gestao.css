@@ -23,6 +23,7 @@ main {
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha */
 }
 
 .section {
@@ -31,6 +32,7 @@ main {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     width: 45%;
+    margin: 1rem; /* Adiciona margem para espaçamento */
 }
 
 button {
@@ -136,7 +138,42 @@ button:hover {
     border-radius: 1rem;
     background-color: #8f0f0f;
     transition: all 1s;
-} .sair:hover {
+}
+
+.sair:hover {
     background-color: #2B1913;
 }
 
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .gestao {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .section {
+        width: 90%; /* Aumenta a largura da seção em telas menores */
+        margin: 1rem 0; /* Ajusta a margem */
+    }
+
+    .sair {
+        width: 8rem; /* Aumenta a largura do botão sair */
+        height: 3rem; /* Aumenta a altura do botão sair */
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 0.5rem; /* Reduz o padding em telas muito pequenas */
+        font-size: 0.875rem; /* Ajusta o tamanho da fonte */
+    }
+
+    button {
+        padding: 8px 16px; /* Ajusta o padding dos botões */
+    }
+
+    .sair {
+        width: 7rem; /* Ajusta a largura do botão sair */
+        height: 2.5rem; /* Ajusta a altura do botão sair */
+    }
+}

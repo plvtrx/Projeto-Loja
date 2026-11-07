@@ -78,7 +78,9 @@ td {
 
 .update:hover {
     background-color: #4a14c7;
-}.delete:hover {
+}
+
+.delete:hover {
     background-color: #af1313;
 }
 
@@ -90,24 +92,20 @@ td {
 .boxSearch {
     width: 25rem;
     height: 2rem;
-
     border: none;
     outline: none;
     background: none;
-
     padding: 1rem;
     border-radius: 0.5rem;
     border: solid 1px #000;
     background-color: #fff;
-
     margin: 1rem auto;
 }
 
-.search>button {
+.search > button {
     border: none;
     outline: none;
     background: none;
-
     width: 2rem;
     height: 2rem;
     cursor: pointer;
@@ -116,6 +114,56 @@ td {
     transition: all 0.5s ease-in-out;
 }
 
-.search>button:hover {
+.search > button:hover {
     background-color: #4a14c7;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .sair {
+        width: 5rem; /* Ajusta a largura do botão sair */
+        height: 2rem; /* Ajusta a altura do botão sair */
+    }
+
+    .boxSearch {
+        width: 80%; /* Aumenta a largura da caixa de pesquisa em telas menores */
+    }
+
+    .search {
+        height: auto; /* Ajusta a altura da seção de pesquisa */
+    }
+
+    table {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte da tabela */
+    }
+
+    .acoes {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        gap: 0.5rem; /* Reduz o espaço entre os botões de ação */
+    }
+
+    .update, .delete {
+        width: 1rem; /* Ajusta a largura dos botões de ação */
+        height: 1rem; /* Ajusta a altura dos botões de ação */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Ajusta o tamanho do título */
+    }
+
+    .sair {
+        width: 4rem; /* Ajusta ainda mais a largura do botão sair */
+        height: 1.5rem; /* Ajusta a altura do botão sair */
+    }
+
+    .boxSearch {
+        width: 90%; /* Aumenta a largura da caixa de pesquisa para telas muito pequenas */
+    }
+
+    .update, .delete {
+        width: 1.2rem; /* Ajusta a largura dos botões de ação para telas muito pequenas */
+        height: 1.2rem; /* Ajusta a altura dos botões de ação para telas muito pequenas */
+    }
 }

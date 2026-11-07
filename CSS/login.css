@@ -84,23 +84,19 @@ form h1 {
     background-color: #70746e;
 }
 
-
 .btn-criar {
     border: none;
     color: #000;
     background: none;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    
     width: 10rem;
     height: 2.8rem;
     cursor: pointer;
     border-radius: 3rem;
     background-color: #d1caca;
     transition: all 1s;
-
     font-size: 0.8rem;
     margin-top: 1rem;
 }
@@ -109,7 +105,6 @@ form h1 {
     color: #fff;
     background-color: #70746e;
 }
-
 
 .style-input {
     width: 80%;
@@ -124,20 +119,15 @@ form h1 {
 .error-message {
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10rem);
-
     color: #ff4949;
     width: 20%;
     height: 4rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     position: absolute;
     top: 10%;
-
     margin: 0 0 0 1rem;
-
     border-radius: 5rem;
     transition: all 1s;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -223,5 +213,52 @@ form h1 {
     100% {
         transform: translateY(1000px) rotate(360deg);
         opacity: 0;
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Aumenta a largura da container em telas menores */
+        height: auto; /* Ajusta a altura para auto */
+    }
+
+    .btn-entrar,
+    .btn-voltar,
+    .btn-criar {
+        width: 80%; /* Botões ocupam mais largura em telas menores */
+    }
+
+    .style-input {
+        width: 90%; /* Aumenta a largura dos inputs */
+    }
+
+    .error-message {
+        width: 80%; /* Aumenta a largura da mensagem de erro */
+        top: 15%; /* Ajusta a posição */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%; /* Reduz a largura da container em telas muito pequenas */
+    }
+
+    form h1 {
+        font-size: 1.5rem; /* Ajusta o tamanho da fonte do título */
+    }
+
+    .style-input {
+        height: 2.5rem; /* Ajusta a altura dos inputs */
+    }
+
+    .btn-entrar,
+    .btn-voltar,
+    .btn-criar {
+        height: 2.5rem; /* Ajusta a altura dos botões */
+    }
+
+    .error-message {
+        height: 3rem; /* Ajusta a altura da mensagem de erro */
     }
 }

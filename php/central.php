@@ -20,10 +20,10 @@ $logado = htmlspecialchars($_SESSION['email'], ENT_QUOTES, 'UTF-8');
 
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/gestao.css">
-
+    <link rel="shortcut icon" type="image/png" href="../favicon/selo Relicário-Vermelho.png">
     <script defer src="/JS/gestao.js"></script>
 
-    <title>Painel de Gestão | E-commerce</title>
+    <title>Painel de Gestão | Relicário</title>
 </head>
 
 <body>

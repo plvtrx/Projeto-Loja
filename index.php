@@ -10,7 +10,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="./CSS/home.css">
-    <title>E-commerce</title>
+    <link rel="shortcut icon" type="image/png" href="./favicon/selo Relicário-Vermelho.png">
+    <title>Relicário</title>
 </head>
 
 <body>

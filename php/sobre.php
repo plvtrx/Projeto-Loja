@@ -11,7 +11,7 @@ session_start();
 
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/sobre.css">
-
+    <link rel="shortcut icon" type="image/png" href="./favicon/selo Relicário-Vermelho.png">
     <title>Sobre Nós | Relicário</title>
 </head>
 

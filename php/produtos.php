@@ -12,8 +12,8 @@ session_start();
 
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/produtos.css">
-
-    <title>Produtos | E-commerce</title>
+    <link rel="shortcut icon" type="image/png" href="../favicon/selo Relicário-Vermelho.png">
+    <title>Produtos | Relicário</title>
 </head>
 
 <body>

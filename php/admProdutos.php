@@ -67,7 +67,7 @@ unset($_SESSION['mensagem']);
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="shortcut icon" type="image/png" href="../favicon/selo Relicário-Vermelho.png">
     <title>Gerenciar Produtos</title>
 
     <!-- CSS -->

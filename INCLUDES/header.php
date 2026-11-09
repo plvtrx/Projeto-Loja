@@ -69,7 +69,7 @@
         <ul class="nav-links" id="nav-links">
             <li><a href="../index.php">Home</a></li>
             <li><a href="../php/produtos.php">Produtos</a></li>
-            <li><a href="#contato">Sobre nós</a></li>
+            <li><a href="../php/sobre.php">Sobre nós</a></li>
         </ul>
     </nav>
 

@@ -1,0 +1,328 @@
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+.sobre-main {
+    width: 100%;
+    background: #f5f4f2;
+    color: #252525;
+}
+
+.sobre-subtitle {
+    display: block;
+    color: #ad8975;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================
+   APRESENTAÇÃO
+===================================== */
+
+.sobre-hero {
+    min-height: 580px;
+    padding: 100px 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #eee7e0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre-hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.sobre-hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.sobre-hero h1 span,
+.sobre-historia-title h2 span,
+.sobre-final h2 span {
+    color: #8e1c17;
+    font-style: italic;
+}
+
+.sobre-hero-content p {
+    max-width: 480px;
+    font-size: 13px;
+    line-height: 2;
+    color: #77716b;
+    margin-bottom: 30px;
+}
+
+.sobre-button {
+    display: inline-block;
+    padding: 16px 28px;
+
+    background: #8e1c17;
+    color: #D6C5BA;
+
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    transition: .3s;
+}
+
+.sobre-button:hover {
+    background: #6f1511;
+}
+
+/* =====================================
+   SELO DA RELICÁRIO
+===================================== */
+
+.sobre-hero-decoration {
+    width: 350px;
+    height: 350px;
+    min-width: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobre-hero-decoration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* =====================================
+   NOSSA HISTÓRIA
+===================================== */
+
+.sobre-historia {
+    padding: 110px 12%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+
+    align-items: center;
+}
+
+.sobre-historia-title h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.sobre-historia-text p {
+    color: #77716b;
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================
+   NOSSA ESSÊNCIA
+===================================== */
+
+.sobre-essencia {
+    padding: 90px 10%;
+    background: #fff;
+}
+
+.sobre-essencia-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sobre-essencia-header h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.sobre-essencia-header p {
+    font-size: 12px;
+    color: #888078;
+    line-height: 1.8;
+}
+
+.sobre-essencia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.sobre-item {
+    position: relative;
+    padding: 35px 25px;
+
+    border: 1px solid #eee9e4;
+    text-align: center;
+
+    transition: .3s;
+}
+
+.sobre-item:hover {
+    transform: translateY(-5px);
+    border-color: #ad8975;
+}
+
+.sobre-number {
+    position: absolute;
+    top: 15px;
+    left: 18px;
+
+    font-size: 10px;
+    color: #ad8975;
+    letter-spacing: 2px;
+}
+
+.sobre-icon {
+    font-size: 35px;
+    color: #8e1c17;
+    margin: 15px 0 20px;
+}
+
+.sobre-item h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.sobre-item p {
+    color: #888078;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   MENSAGEM FINAL
+===================================== */
+
+.sobre-final {
+    padding: 100px 20px;
+    text-align: center;
+
+    background: #8e1c17;
+    color: #fff;
+}
+
+.sobre-final .sobre-subtitle {
+    color: #D6C5BA;
+}
+
+.sobre-final h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.sobre-final h2 span {
+    color: #D6C5BA;
+}
+
+.sobre-final p {
+    font-size: 13px;
+    color: #eadbd2;
+    margin-bottom: 30px;
+}
+
+.sobre-button-light {
+    background: #D6C5BA;
+    color: #8e1c17;
+}
+
+.sobre-button-light:hover {
+    background: #fff;
+}
+
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .sobre-hero {
+        padding: 80px 7%;
+    }
+
+    .sobre-hero-decoration {
+        width: 250px;
+        height: 250px;
+        min-width: 250px;
+    }
+
+    .sobre-hero-decoration span {
+        font-size: 140px;
+    }
+
+    .sobre-historia {
+        padding: 80px 8%;
+        gap: 40px;
+    }
+
+    .sobre-essencia-grid {
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .sobre-hero {
+        padding: 75px 7%;
+        min-height: auto;
+    }
+
+    .sobre-hero-decoration {
+        display: none;
+    }
+
+    .sobre-historia {
+        padding: 65px 7%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sobre-historia-title h2 {
+        font-size: 32px;
+    }
+
+    .sobre-essencia {
+        padding: 70px 7%;
+    }
+
+    .sobre-essencia-header h2 {
+        font-size: 32px;
+    }
+
+    .sobre-essencia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-final {
+        padding: 75px 15px;
+    }
+
+    .sobre-final h2 {
+        font-size: 32px;
+    }
+
+}

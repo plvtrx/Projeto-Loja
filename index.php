@@ -51,7 +51,7 @@ session_start();
                     <span class="section-subtitle">NOVA COLEÇÃO</span>
                 </div>
 
-                <a href="#" class="view-all">Ver tudo →</a>
+                <a href="./php/produtos.php" class="view-all">Ver tudo →</a>
             </div>
 
             <div class="products-grid">

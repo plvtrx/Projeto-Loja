@@ -3,190 +3,449 @@ main {
     min-height: 100vh;
 }
 
-main > .bemVindo {
+.carrossel {
+    position: relative;
     width: 100%;
-    height: 760px;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url('../img/bemVindo.jpg');
-}
-
-.bemVindo > a > button {
-    width: 200px;
-    height: 50px;
-    border: none;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 2rem;
-    background-color: #1F2B13;
-
-    top: 80%;
-    left: 50%;
-    position: absolute;
-    transition: all 1s ease;
-    transform: translate(-50%, -50%);
-}
-
-.bemVindo > a > button:hover {
-    cursor: pointer;
-    background-color: #AB9893;
-}
-
-.informacoes {
-    width: 100%;
-    height: 7.5rem;
-
-    gap: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.informacoes > div {
-    font-size: 0.875rem;
-
-    gap: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-categoria,
-.card-novidades {
-    width: 100%;
-    height: 30rem;
-    color: #fff;
-
-    gap: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card {
-    height: 30rem;
-    width: 22.5rem;
+    height: 45vh; /* Altura responsiva */
     overflow: hidden;
-    border-radius: 1rem;
 }
 
-.card > img {
+.carrossel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carrossel-item {
+    min-width: 100%; /* Cada item ocupa 100% da largura */
+    height: 100%; /* Altura do item deve ser 100% */
+    display: none; /* Começa invisível */
+}
+
+.carrossel-item.active {
+    display: flex; /* Torna o slide ativo visível */
+}
+
+.carrossel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block; /* Remove o espaço abaixo da imagem */
+}
+
+/* Botões de navegação */
+.carrossel-prev,
+.carrossel-next {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajusta para centralizar */
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1; /* Para que os botões fiquem acima do carrossel */
+    transition: background-color 0.3s; /* Transição suave para o fundo */
+}
+
+.carrossel-prev {
+    left: 5%; /* Ajusta a posição à esquerda */
+}
+
+.carrossel-next {
+    right: 5%; /* Ajusta a posição à direita */
+}
+
+/* Sinalização */
+.sinalizacao {
+    position: absolute;
+    bottom: 10px; /* Distância do fundo */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Centraliza ainda mais */
+    display: flex; /* Usar flexbox para alinhar as bolinhas */
+    justify-content: center; /* Centraliza as bolinhas dentro do contêiner */
+    z-index: 2; /* Certifica-se de que as bolinhas estão acima do carrossel */
+}
+
+.bolinha {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: white; /* Cor padrão */
+    border-radius: 50%; /* Forma de bolinha */
+    opacity: 0.5; /* Opacidade padrão */
+    cursor: pointer; /* Cursor de ponteiro */
+}
+
+.bolinha.active {
+    opacity: 1; /* Bolinha ativa */
+    background-color: #AB9893; /* Cor da bolinha ativa */
+}
+
+.products-section {
+    background: #f5f4f2;
+    padding: 70px 5%;
+}
+
+/* CABEÇALHO */
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 35px;
+}
+
+.section-subtitle {
+    color: #ad8975;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.products-header h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 10px;
+    color: #252525;
+}
+
+.view-all {
+    text-decoration: none;
+    color: #59483a;
+    font-size: 10px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #ad8975;
+    padding-bottom: 7px;
+}
+
+/* GRID */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.product-card {
+    min-width: 0;
+}
+
+/* IMAGEM */
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #e5ddd3;
+}
+
+.product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-.card:hover img {
-    transform: scale(1.1);
+.product-card:hover .product-image img {
+    transform: scale(1.05);
 }
 
-.banner-novidade {
-    margin-top: 1.5rem;
+/* INFORMAÇÕES */
+
+.product-info {
+    padding-top: 15px;
+}
+
+.product-info h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #252525;
+    margin-bottom: 8px;
+}
+
+/* DESCRIÇÃO + CORAÇÃO NA MESMA LINHA */
+
+.product-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
     width: 100%;
-    height: 20rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.banner-texto {
-    width: 83%;
-    height: 40%;
-    border-radius: 1rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1F2B13;
+.product-description p {
+    font-size: 12px;
+    color: #888078;
+    margin: 0;
 }
 
-.txt-novidade {
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-}
+/* BOTÃO FAVORITAR */
 
-.verMais {
-    width: 100%;
-    height: 7.5rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-novidade {
-    width: 200px;
-    height: 50px;
+.favorite-btn {
     border: none;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 2rem;
-    background-color: #1F2B13;
-
-    transition: all 1s ease;
+    background: transparent;
+    color: #59483a;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: 0.3s;
 }
 
-.btn-novidade:hover {
-    cursor: pointer;
-    background-color: #AB9893;
+.favorite-btn:hover {
+    color: #b35b5b;
+    transform: scale(1.15);
+}
+
+.favorite-btn.active {
+    color: #b35b5b;
+}
+
+/* PREÇO */
+
+.product-price {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #252525;
+    margin-top: 10px;
+}
+
+/* SEÇÃO DE CATEGORIAS */
+
+.categories-section {
+    background: #f5f4f2;
+    padding: 80px 5%;
+}
+
+/* CABEÇALHO */
+
+.categories-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.categories-header .section-subtitle {
+    color: #ad8975;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.categories-header h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #252525;
+    margin-top: 12px;
+}
+
+.categories-header p {
+    color: #888078;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* GRID */
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* CARD */
+
+.category-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    text-decoration: none;
+    background: #e5ddd3;
+}
+
+/* IMAGEM */
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.06);
+}
+
+/* SOBREPOSIÇÃO */
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 35px 15px;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.05) 55%,
+        transparent
+    );
+
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.category-overlay h3 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.category-overlay span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 7px;
+}
+
+/* HOVER */
+
+.category-card:hover .category-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.1) 65%,
+        transparent
+    );
 }
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
-    .bemVindo {
-        height: 500px; /* Reduz a altura da seção de boas-vindas em telas menores */
+    .carrossel {
+        height: 30vh; /* Ajusta a altura para telas menores */
     }
 
-    .bemVindo > a > button {
-        width: 150px; /* Reduz a largura do botão */
-        height: 40px; /* Reduz a altura do botão */
-        font-size: 1rem; /* Ajusta o tamanho da fonte do botão */
+    .carrossel-prev,
+    .carrossel-next {
+        display: none; /* Esconde as setas em telas menores */
     }
 
-    .informacoes {
-        flex-direction: column; /* Muda para coluna em telas menores */
-        height: auto; /* Ajusta a altura */
-        gap: 2rem; /* Reduz o espaço entre os elementos */
+    .sinalizacao {
+        bottom: 5px; /* Ajusta a posição das bolinhas em telas menores */
     }
 
-    .card {
-        width: 90%; /* Aumenta a largura do cartão em telas menores */
-        height: auto; /* Ajusta a altura do cartão para auto */
+    .bolinha {
+        height: 8px; /* Reduz a altura da bolinha */
+        width: 8px; /* Reduz a largura da bolinha */
     }
 
-    .card-categoria,
-    .card-novidades {
-        flex-direction: column; /* Alinha os cartões verticalmente */
-        height: auto; /* Ajusta a altura para auto */
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 15px;
     }
 
-    .btn-novidade {
-        width: 150px; /* Reduz a largura do botão de novidades */
-        height: 40px; /* Reduz a altura do botão de novidades */
-        font-size: 1rem; /* Ajusta o tamanho da fonte do botão */
+    .categories-section {
+        padding: 60px 5%;
     }
+
+    .categories-grid {
+        gap: 15px;
+    }
+
+    .category-overlay {
+        padding: 20px 10px;
+    }
+
+    .category-overlay h3 {
+        font-size: 22px;
+    }
+
+    .category-overlay span {
+        font-size: 8px;
+    }
+
 }
 
 @media (max-width: 480px) {
-    .bemVindo {
-        height: 400px; /* Reduz ainda mais a altura para telas muito pequenas */
+    .carrossel {
+        height: 25vh; /* Ajusta ainda mais a altura para telas muito pequenas */
     }
 
-    .txt-novidade {
-        font-size: 1rem; /* Ajusta o tamanho da fonte do texto de novidades */
+    .sinalizacao {
+        bottom: 5px; /* Mantém a posição das bolinhas em telas muito pequenas */
     }
 
-    .btn-novidade {
-        width: 120px; /* Reduz a largura do botão de novidades */
-        height: 35px; /* Reduz a altura do botão de novidades */
+    .bolinha {
+        height: 6px; /* Reduz ainda mais a altura da bolinha */
+        width: 6px; /* Reduz ainda mais a largura da bolinha */
+    }
+
+    .products-section {
+        padding: 45px 5%;
+    }
+
+    .products-header h2 {
+        font-size: 25px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 12px;
+    }
+
+    .product-info h3 {
+        font-size: 12px;
+    }
+
+    .product-description p {
+        font-size: 10px;
+    }
+
+    .favorite-btn {
+        font-size: 15px;
+    }
+
+    .product-price {
+        font-size: 13px;
+    }
+
+    .categories-section {
+        padding: 45px 5%;
+    }
+
+    .categories-header h2 {
+        font-size: 26px;
+    }
+
+    .categories-header p {
+        font-size: 12px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .category-card {
+        aspect-ratio: 4 / 3;
+    }
+
+    .category-overlay h3 {
+        font-size: 25px;
     }
 }

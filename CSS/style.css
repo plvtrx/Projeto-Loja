@@ -1,3 +1,4 @@
+/* CSS existente */
 @import url('https://fonts.googleapis.com/css2?family=Caacupe+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
@@ -7,31 +8,61 @@
     font-family: "Roboto", sans-serif;
 }
 
+body, html {
+    background-color: #f5f4f2;
+}
+
 header {
     width: 100%;
-    height: 60px;
+    height: 8rem; /* Altura fixa */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #8e1c17;
+}
 
+.primeira {
+    width: 100%;
+    height: 60%; /* Altura fixa */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Alterado para space-between */
-    background-color: #1F2B13;
-    padding: 0 1rem; /* Adicionado padding */
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.segunda {
+    width: 100%;
+    height: 40%; /* Altura fixa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ul {
-    gap: 2rem;
     display: flex;
     padding: 0;
     list-style: none;
 }
 
 a {
-    color: #fff;
+    color: #D6C5BA;
     text-decoration: none;
     transition: all 0.6s ease;
 }
 
+.search-bar {
+    color: #D6C5BA;
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.nav-icons{
+    gap: 1rem;
+}
+
 .nav-links {
+    gap: 2rem;
     font-size: 1rem;
     font-weight: 900;
 }
@@ -41,80 +72,157 @@ a {
 }
 
 .logoMarca {
-    width: 7rem;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 10rem; /* Largura fixa para desktop */
 }
 
 .logoMarca > img {
-    width: 40px;
-    height: 40px;
+    max-width: 100%;
+    height: auto; /* Mantém a proporção */
 }
 
-li.search-bar {
-    display: flex;
-    align-items: center;
+/* Adicionado para o menu hamburguer */
+.menu-hamburguer {
+    display: none; /* Esconder o menu hamburguer por padrão */
 }
 
-.icon-search {
-    height: 2rem;
-    width: 2.5rem;
-    border: 0.01rem solid #fff;
-    border-radius: 0.5rem 0 0 0.5rem;
+.icon-hamburguer {
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    margin-right: 1rem; /* Espaço entre o ícone e a lupa */
+}
 
+/* Menu Hamburguer */
+.hamburger-menu {
+    position: fixed;
+    top: 0;
+    left: 0; /* Começa na posição correta */
+    width: 100%; /* Ocupar 100% da largura */
+    height: 100%; /* Ocupar 100% da altura */
+    background-color: #8e1c17;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: opacity 0.3s ease; /* Transição suave */
+    z-index: 100; /* Aumenta o z-index para garantir que fique acima de outros elementos */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Desabilita interações quando não ativo */
 }
 
-.search-input {
-    cursor: text;
-    border: none;
+.hamburger-menu.active {
+    opacity: 1; /* Torna visível quando ativo */
+    pointer-events: auto; /* Permite interações quando ativo */
+}
+
+/* Estilo para os links do menu */
+.hamburger-menu .nav-links {
+    display: flex; /* Mostra os links em linha */
+    flex-direction: column; /* Alinha os links verticalmente */
+    gap: 1rem; /* Espaçamento entre os links */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Adiciona estilo para o botão de fechar */
+.close-btn {
+    font-size: 2rem;
     color: #fff;
-    background: none;
-
-    width: 300px;
-    height: 2rem;
-    padding-left: 0.5rem;
-    border: 0.01rem solid #fff;
-    border-radius: 0 0.5rem 0.5rem 0;
+    align-self: flex-end; /* Alinha o botão de fechar ao canto superior direito */
+    margin: 1rem; /* Espaçamento */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
 }
 
-.search-input:focus {
-    outline: none;
+/* MAIN FOOTER */
+.main-footer {
+  background: #8e1c17;
+  color: #D6C5BA;
+  padding: 50px 9% 25px;
 }
 
-svg {
-    width: 1rem;
-    height: 1rem;
-    fill: #fff;
-    transition: all 0.6s ease;
+/* LOGO */
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 55px;
 }
 
-a > svg:hover {
-    fill: #AB9893;
+.footer-logo img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
-ul.nav-icons {
-    display: flex;
-    align-items: center;
+/* FOOTER CONTENT */
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  min-height: 145px;
 }
 
-footer {
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.footer-column h3 {
+  font-size: 11px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #999;
+  font-size: 11px;
+  transition: 0.3s;
+  width: fit-content;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+/* SELO */
+.footer-selo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-selo img {
     width: 100%;
-    height: 40px;
-    color: #fff;
-
-    margin-top: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1F2B13;
+    max-width: 110px;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
-/* Media Queries para Responsividade */
+/* BOTTOM */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 10px;
+  gap: 20px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  color: #D6C5BA;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
     header {
         flex-direction: column; /* Muda para coluna em telas menores */
@@ -124,24 +232,76 @@ footer {
     .nav-links {
         flex-direction: column; /* Alinha os links verticalmente */
         gap: 1rem; /* Espaçamento entre os links */
+        display: none; /* Esconde os links inicialmente */
+        width: 100%; /* Largura total */
+        background-color: #8e1c17; /* Cor de fundo do menu */
+        position: absolute; /* Para sobrepor o conteúdo */
+        top: 10rem; /* Abaixo do cabeçalho */
+        left: 0; /* Alinha à esquerda */
+        z-index: 1; /* Fica acima do conteúdo */
     }
 
-    .search-input {
-        width: 100%; /* Aumenta a largura do campo de busca */
-        margin-top: 0.5rem; /* Espaçamento superior */
+    .nav-links.active {
+        display: flex; /* Mostra os links quando ativo */
+    }
+
+    .logoMarca {
+        width: 80%; /* Ajusta a largura do logo em telas menores */
+        max-width: 8rem; /* Limita a largura máxima da logo */
+    }
+
+    .menu-hamburguer {
+        display: block; /* Mostra o menu hamburguer em telas menores */
+    }
+
+    .main-footer {
+        padding: 45px 7% 25px;
+    }
+
+    .footer-logo img {
+        max-width: 150px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 40px;
+    }
+    
+    .footer-selo img {
+        max-width: 95px;
     }
 }
 
 @media (max-width: 480px) {
     .logoMarca {
-        width: 5rem; /* Reduz a largura do logo em telas menores */
+        width: 70%; /* Ajusta a largura do logo em telas muito pequenas */
+        max-width: 6rem; /* Limita a largura máxima da logo */
     }
 
     .nav-links {
         font-size: 0.9rem; /* Ajusta o tamanho da fonte dos links */
     }
 
-    .search-input {
-        width: 80%; /* Ajusta a largura do campo de busca */
+    .footer-logo img {
+        max-width: 130px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-selo {
+        justify-content: flex-start;
+    }
+
+    .footer-selo img {
+        max-width: 85px;
     }
 }

@@ -57,7 +57,7 @@ a {
     margin-right: 3rem;
 }
 
-.nav-icons{
+.nav-icons {
     gap: 1rem;
 }
 
@@ -133,68 +133,78 @@ a {
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
 }
 
+/* Estilo para o ícone do hamburguer */
+.icon-hamburguer svg {
+    fill: #D6C5BA; /* Altere para a cor desejada */
+    transition: fill 0.3s ease; /* Transição suave para a cor */
+}
+
+.icon-hamburguer:hover svg {
+    fill: #AB9893; /* Altera a cor ao passar o mouse, se desejado */
+}
+
 /* MAIN FOOTER */
 .main-footer {
-  background: #8e1c17;
-  color: #D6C5BA;
-  padding: 50px 9% 25px;
+    background: #8e1c17;
+    color: #D6C5BA;
+    padding: 50px 9% 25px;
 }
 
 /* LOGO */
 .footer-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 55px;
 }
 
 .footer-logo img {
-  width: 100%;
-  max-width: 180px;
-  height: auto;
-  object-fit: contain;
-  display: block;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 /* FOOTER CONTENT */
 .footer-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-  min-height: 145px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    min-height: 145px;
 }
 
 .footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
 }
 
 .footer-column h3 {
-  font-size: 11px;
-  margin-bottom: 10px;
-  font-weight: bold;
+    font-size: 11px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .footer-column a {
-  text-decoration: none;
-  color: #999;
-  font-size: 11px;
-  transition: 0.3s;
-  width: fit-content;
+    text-decoration: none;
+    color: #999;
+    font-size: 11px;
+    transition: 0.3s;
+    width: fit-content;
 }
 
 .footer-column a:hover {
-  color: #fff;
+    color: #fff;
 }
 
 /* SELO */
 .footer-selo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-selo img {
@@ -207,19 +217,19 @@ a {
 
 /* BOTTOM */
 .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 50px;
-  padding-top: 10px;
-  gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 10px;
+    gap: 20px;
 }
 
 .footer-bottom p,
 .footer-bottom a {
-  color: #D6C5BA;
-  font-size: 9px;
-  text-decoration: none;
+    color: #D6C5BA;
+    font-size: 9px;
+    text-decoration: none;
 }
 
 /* Responsividade */

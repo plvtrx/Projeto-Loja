@@ -1,75 +1,357 @@
-main {
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* SEÇÃO DE PRODUTOS */
+
+.products-section {
     width: 100%;
+    background: #f5f4f2;
+    padding: 70px 5%;
     min-height: 100vh;
 }
 
-.section-produto {
-    width: 100%;
-    height: auto; /* Altera para auto para se ajustar ao conteúdo */
-    padding: 2rem 0; /* Adiciona espaçamento em cima e embaixo */
-}
 
-.qtdProduto {
-    position: absolute;
-    top: 25%;
-    left: 10%;
-}
+/* CABEÇALHO */
 
-.card-produtos {
-    color: #000;
-    width: 100%;
-    margin: 0 auto;
+.products-header {
     display: flex;
-    flex-wrap: wrap; /* Permite que os cartões se movam para a próxima linha */
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 35px;
 }
 
-.card {
-    width: 20%;
-    height: 30rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.section-subtitle {
+    color: #ad8975;
+    font-size: 10px;
+    letter-spacing: 3px;
 }
 
-.card > img {
+.products-header h1 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: 400;
+
+    margin-top: 10px;
+
+    color: #252525;
+}
+
+.products-count {
+    font-size: 12px;
+    color: #888078;
+}
+
+
+/* GRID DE PRODUTOS */
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 35px 20px;
+
     width: 100%;
-    height: 90%;
-    border-radius: 1rem;
+}
+
+
+/* CARD */
+
+.product-card {
+    min-width: 0;
+}
+
+
+/* IMAGEM */
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+
+    background: #e5ddd3;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
     object-fit: cover;
-    transition: transform 0.3s ease;
+
+    transition: transform 0.5s ease;
 }
 
-.descricao {
-    margin-top: 1rem;
-}
-
-.card:hover img {
+.product-card:hover .product-image img {
     transform: scale(1.05);
 }
 
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-    .section-produto {
-        padding: 1rem; /* Reduz o padding em telas menores */
-    }
 
-    .card {
-        width: 45%; /* Aumenta a largura do cartão em telas menores */
-        height: auto; /* Ajusta a altura do cartão para auto */
-    }
+/* INFORMAÇÕES */
+
+.product-info {
+    padding-top: 15px;
 }
 
-@media (max-width: 480px) {
-    .card {
-        width: 90%; /* Cartões ocupam quase toda a largura em telas muito pequenas */
+.product-info h3 {
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #252525;
+
+    margin-bottom: 8px;
+}
+
+
+/* DESCRIÇÃO */
+
+.product-description {
+    font-size: 12px;
+    color: #888078;
+
+    line-height: 1.5;
+}
+
+
+/* PREÇO */
+
+.product-price {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #252525;
+}
+
+
+/* ESTOQUE */
+
+.product-stock {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+.product-stock.disponivel {
+    color: #39845b;
+}
+
+.product-stock.esgotado {
+    color: #c0392b;
+}
+
+
+/* CARREGAMENTO */
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 40px 20px;
+}
+
+.loading-image {
+    width: 35px;
+    height: 35px;
+
+    object-fit: contain;
+
+    animation: girarLogo 2s linear infinite;
+}
+
+.loading p {
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    color: #77685b;
+}
+
+
+/* ANIMAÇÃO DA LOGO */
+
+@keyframes girarLogo {
+
+    from {
+        transform: rotate(0deg);
     }
 
-    .qtdProduto {
-        top: 10%; /* Ajusta a posição da quantidade do produto */
-        left: 5%; /* Ajusta a posição para ficar mais centralizado */
+    to {
+        transform: rotate(360deg);
     }
+
+}
+
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .loading-image {
+        animation: none;
+    }
+
+}
+
+
+/* BOTÃO VER MAIS */
+
+.load-more-container {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 55px;
+}
+
+#loadMoreBtn {
+    background: #59483a;
+    color: #fff;
+
+    border: none;
+
+    padding: 16px 40px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: background 0.3s;
+}
+
+#loadMoreBtn:hover {
+    background: #77685b;
+}
+
+#loadMoreBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* MENSAGENS */
+
+.empty-message,
+.error-message {
+    text-align: center;
+
+    padding: 60px 15px;
+
+    color: #77685b;
+    font-size: 13px;
+}
+
+.empty-message h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+
+.error-message button {
+    display: block;
+
+    margin: 15px auto 0;
+
+    background: #59483a;
+    color: #fff;
+
+    border: none;
+    padding: 12px 25px;
+
+    cursor: pointer;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 30px 15px;
+    }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .products-section {
+        padding: 45px 5%;
+    }
+
+    .products-header h1 {
+        font-size: 27px;
+    }
+
+    .products-count {
+        font-size: 10px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 28px 12px;
+    }
+
+    .product-info h3 {
+        font-size: 12px;
+    }
+
+    .product-description {
+        font-size: 10px;
+    }
+
+    .product-price {
+        font-size: 13px;
+    }
+
+    .product-stock {
+        font-size: 10px;
+    }
+
+    #loadMoreBtn {
+        width: 100%;
+        padding: 16px;
+    }
+
+}
+
+
+/* TELAS MUITO PEQUENAS */
+
+@media (max-width: 350px) {
+
+    .products-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
 }

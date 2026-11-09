@@ -19,15 +19,15 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['passwor
     if ($passwordHash && password_verify($password, $passwordHash)) {
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password; // Armazenar a senha em sessão não é recomendado
-        header("Location: ./central.php");
+        header("Location: ../PHP/central.php");
         exit();
     } else {
         $_SESSION['error_message'] = "Email ou senha incorretos. Tente novamente.";
-        header("Location: ./loginCentral.php");
+        header("Location: ../PHP/loginCentral.php");
         exit();
     }
 } else {
-    header("Location: ./loginCentral.php");
+    header("Location: ../PHP/loginCentral.php");
     exit();
 }
 ?>

@@ -23,29 +23,64 @@ if (isset($_SESSION['error_message'])) {
 <body>
     <main>
         <div class="container">
+
             <div class="right" id="loginForm">
-                <form action="./validLoginC.php" method="POST">
-                    <h1>Login <a class="btn-secreto" href="./loginCentral.php">.</a></h1>
-                    <input class="style-input" type="email" name="email" placeholder="Email" required>
-                    <input class="style-input" type="password" name="password" placeholder="Senha" required>
+
+                <!-- CRIAR CONTA -->
+                <div class="primeiro-acesso">
+                    <h2>Primeiro acesso<a href="../php/loginCentral.php" class="oculto">?</a></h2>
+                    <p>Crie sua conta para continuar</p>
+
+                    <a class="btn-criar" href="../php/register.php">
+                        Criar conta
+                    </a>
+                </div>
+
+                <!-- LOGIN -->
+                <form action="../php/validLoginC.php" method="POST">
+
+                    <h2>Já tem cadastro?</h2>
+
+                    <p class="descricao">
+                        Entre com seu e-mail e senha para continuar
+                    </p>
+
+                    <input
+                        class="style-input"
+                        type="text"
+                        name="email"
+                        placeholder="E-mail"
+                        required>
+
+                    <div class="campo-senha">
+
+                        <input
+                            class="style-input"
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Senha"
+                            required>
+
+                        <span class="mostrar-senha" onclick="togglePassword()">
+                            ◉
+                        </span>
+
+                    </div>
+
+                    <a href="#" class="esqueci-senha">
+                        Esqueci minha senha
+                    </a>
+
                     <input type="submit" id="submit" class="btn-entrar" name="submit" value="ENTRAR">
 
-                    <a class="btn-criar" href="./register.php">CRIAR CONTA</a>
+                    <input type="button" class="btn-entrar" name="voltar" value="Voltar" onclick="window.location.href='/index.php'">
 
-                    <input type="button" class="btn-voltar" value="Voltar" onclick="window.location.href='/index.php'">
                 </form>
+
             </div>
         </div>
-        <ul class="boxes">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
     </main>
-
     <script defer src="../JS/script.js"></script>
 </body>
 

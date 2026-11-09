@@ -21,7 +21,7 @@
         </ul>
 
         <div class="logoMarca">
-            <img src="./IMG/Logo Relicário-bege.png" alt="Logo">
+            <img src="../IMG/Logo Relicário-bege.png" alt="Logo">
         </div>
 
         <ul class="nav-icons">
@@ -44,20 +44,31 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo isset($_SESSION['email']) ? './php/cliente.php' : './php/login.php'; ?>">
+                <a href="<?php
+                            if (isset($_SESSION['email'])) {
+
+                                if ($_SESSION['email'] === 'admin@gmail.com') {
+                                    echo '../php/central.php';
+                                } else {
+                                    echo '../php/cliente.php';
+                                }
+                            } else {
+                                echo '../php/login.php';
+                            }
+                            ?>">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-person-fill" viewBox="0 0 16 16">
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                     </svg>
-                </a>
+                    </a>
             </li>
         </ul>
     </nav>
 
     <nav class="segunda">
         <ul class="nav-links" id="nav-links">
-            <li><a href="/index.php">Home</a></li>
-            <li><a href="/php/produtos.php">Produtos</a></li>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="../php/produtos.php">Produtos</a></li>
             <li><a href="#contato">Sobre nós</a></li>
         </ul>
     </nav>
@@ -66,10 +77,10 @@
     <div class="hamburger-menu" id="hamburger-menu">
         <div class="close-btn" onclick="toggleMenu()">&times;</div>
         <ul class="nav-links">
-            <li><a href="/index.php">Home</a></li>
-            <li><a href="/php/produtos.php">Produtos</a></li>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="../php/produtos.php">Produtos</a></li>
             <li><a href="#contato">Sobre nós</a></li>
         </ul>
     </div>
-    <script src="./JS/menu.js"></script>
+    <script src="../JS/menu.js"></script>
 </header>

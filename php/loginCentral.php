@@ -24,24 +24,17 @@ if (isset($_SESSION['error_message'])) {
     <main>
         <div class="container">
             <div class="right" id="loginForm">
-                <form action="./validLogin.php" method="POST">
+                <form action="../php/validLogin.php" method="POST">
                     <h1>Login</h1>
 
                     <input class="style-input" type="email" name="email" id="email" placeholder="Email" required>
                     <input class="style-input" type="password" name="password" id="password" placeholder="Senha" required>
                     <input type="submit" id="submit" class="btn-entrar" name="submit" value="ENTRAR">
-                    <input type="button" class="btn-voltar" value="Voltar" onclick="window.location.href='./login.php'">
+                    <input type="button" class="btn-entrar" name="voltar" value="Voltar" onclick="window.location.href='./login.php'">
                 </form>
             </div>
         </div>
-        <ul class="boxes">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+
     </main>
 
     <script defer src="../JS/script.js"></script>

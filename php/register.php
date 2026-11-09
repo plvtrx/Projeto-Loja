@@ -19,7 +19,7 @@ if (isset($_SESSION['error_message'])) {
 
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/register.css">
-    <link rel="shortcut icon" type="image/png" href="./favicon/selo Relicário-Vermelho.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon/selo Relicário-Vermelho.png">
     <script defer src="../JS/script.js"></script>
 
     <title>Criar Conta | Relicário</title>
